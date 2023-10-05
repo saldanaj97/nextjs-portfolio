@@ -1,5 +1,6 @@
 import { nextui } from '@nextui-org/react'
 import type { Config } from 'tailwindcss'
+import colors from 'tailwindcss/colors'
 
 const config: Config = {
   content: [
@@ -8,14 +9,53 @@ const config: Config = {
     './components/**/*.{js,ts,jsx,tsx,mdx}',
     './app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
-  plugins: [nextui()],
+  plugins: [
+    nextui({
+      themes: {
+        light: {
+          colors: {
+            primary: '#4273a8',
+            ...colors,
+          },
+        },
+      },
+    }),
+  ],
   theme: {
+    colors: {
+      primary: '#4273a8',
+    },
     extend: {
-      backgroundImage: {
-        'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+      animation: {
+        hello: 'wave 1.8s infinite',
+      },
+      keyframes: {
+        wave: {
+          '0%': {
+            transform: 'rotate(0deg)',
+          },
+          '10%': {
+            transform: 'rotate(-10deg)',
+          },
+          '20%': {
+            transform: 'rotate(12deg)',
+          },
+          '30%': {
+            transform: 'rotate(-10deg)',
+          },
+          '40%': {
+            transform: 'rotate(9deg)',
+          },
+          '50%': {
+            transform: 'rotate(0deg)',
+          },
+          '100%': {
+            transform: 'rotate(0deg)',
+          },
+        },
       },
     },
   },
 }
+
 export default config

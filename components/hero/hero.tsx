@@ -17,7 +17,7 @@ export default function Hero() {
             width="550"
             height="550"
             src={heroImg}
-            className="absolute z-0 translate-y-1 scale-110 rounded-full object-fill opacity-50 blur-xl saturate-150 filter"
+            className="absolute z-0 translate-y-1 scale-105 rounded-full object-fill opacity-50 blur-xl saturate-150 filter"
           />
           {/* Image */}
           <Image alt="computer-image" width="550" height="550" src={heroImg} className="z-20 rounded-full" />

@@ -8,27 +8,19 @@ import { greeting } from '../portfolioData'
 
 export default function Hero() {
   return (
-    <div id="greeting" className="px-12 md:h-screen">
-      <div className="flex flex-col justify-center md:flex-row">
-        <div className="md:flex md:w-1/2">
-          {/* Overlay */}
-          <Image
-            alt="computer-image"
-            width="550"
-            height="550"
-            src={heroImg}
-            className="absolute z-0 translate-y-1 scale-105 rounded-full object-fill opacity-50 blur-xl saturate-150 filter"
-          />
-          {/* Image */}
-          <Image alt="computer-image" width="550" height="550" src={heroImg} className="z-20 rounded-full" />
+    <div id="greeting" className="absolute top-0 min-h-screen bg-primary">
+      <div className="flex flex-col md:flex-row">
+        <div className="flex-row md:flex md:h-screen md:w-1/2">
+          <Image src={heroImg} alt="computer-image" className="h-full w-full overflow-hidden object-cover" />
         </div>
-        <div className="flex flex-col justify-center md:w-1/2 ">
-          <div className="mb-4 flex flex-row text-xl">
-            <p className="text-4xl font-extrabold text-primary md:text-7xl">
+        <div className="flex flex-col justify-center px-12 md:w-1/2">
+          <div className="mb-2 flex flex-row text-xl">
+            <p className="text-4xl font-extrabold text-white md:text-7xl">
               {greeting.title} <span className="inline-block animate-hello">{emoji('👋')}</span>
             </p>
           </div>
-          <p className="mb-4 text-lg md:text-xl">{greeting.subTitle}</p>
+          <p className="mb-2 text-4xl text-white ">{greeting.jobTitle}</p>
+          <p className="mb-4 text-lg text-white md:text-xl">{greeting.subTitle}</p>
           <div className="flex flex-row justify-center">
             <HeroButton buttonText="Contact Me" href="" />
             <HeroButton buttonText="View Résumé" href={greeting.resumeLink} />

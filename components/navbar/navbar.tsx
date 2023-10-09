@@ -1,12 +1,11 @@
-// import { Button, Link, Navbar, NavbarBrand, NavbarContent, NavbarItem } from '@nextui-org/react'
-import { Link } from '@nextui-org/link'
 import { Navbar, NavbarBrand, NavbarContent, NavbarItem } from '@nextui-org/navbar'
+import Link from 'next/link'
 
 import { greeting } from '../portfolioData'
 
 export default function Nav() {
   return (
-    <Navbar shouldHideOnScroll maxWidth="full" className="bg-transparent px-12" isBlurred={false}>
+    <Navbar shouldHideOnScroll maxWidth="full" className="absolute left-0 top-0 bg-transparent px-12" isBlurred={false}>
       <NavbarBrand>
         <a>
           <span className="text-3xl font-semibold text-primary">&lt;</span>

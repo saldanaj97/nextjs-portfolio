@@ -1,9 +1,9 @@
 import emoji from 'react-easy-emoji'
 
-import chattyio from '../app/assets/images/chattyio.png'
-import eCommerce from '../app/assets/images/e-commerce.png'
-import iRacingWeeklyScreenshot from '../app/assets/images/iracingweekly.png'
-import ratingForm from '../app/assets/images/rating-component.png'
+import chattyio from '@/public/images/chattyio.png'
+import eCommerce from '@/public/images/e-commerce.png'
+import iRacingWeeklyScreenshot from '@/public/images/iracingweekly.png'
+import ratingForm from '@/public/images/rating-component.png'
 
 //require('dotenv').config({ path: '../.env' })
 

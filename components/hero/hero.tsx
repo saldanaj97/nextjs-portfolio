@@ -2,7 +2,8 @@ import Image from 'next/image'
 import React from 'react'
 import emoji from 'react-easy-emoji'
 
-import heroImg from '../../app/assets/images/hero-img.jpg'
+import heroImg from '@/public/images/hero-img.jpg'
+
 import HeroButton from '../buttons/heroButton'
 import { greeting } from '../portfolioData'
 

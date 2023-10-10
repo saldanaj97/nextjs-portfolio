@@ -1,4 +1,5 @@
 import Hero from '@/components/hero/hero'
+import Projects from '@/components/projects/projects'
 import Skills from '@/components/skills/skills'
 
 export default function Home() {
@@ -7,6 +8,7 @@ export default function Home() {
       <Hero />
       {/* <Goals /> */}
       <Skills />
+      <Projects />
     </main>
   )
 }

@@ -14,7 +14,7 @@ import {
   TbFileTypeSql,
 } from 'react-icons/tb'
 
-import ProgrammerImg from '@/public/images/programmer.svg'
+import ProgrammerImg from '@/public/images/hero-img.svg'
 
 export default function Skills() {
   return (

@@ -1,30 +1,15 @@
-import { nextui } from '@nextui-org/react'
 import type { Config } from 'tailwindcss'
 import colors from 'tailwindcss/colors'
 
 const config: Config = {
-  content: [
-    './node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}',
-    './pages/**/*.{js,ts,jsx,tsx,mdx}',
-    './components/**/*.{js,ts,jsx,tsx,mdx}',
-    './app/**/*.{js,ts,jsx,tsx,mdx}',
-  ],
-  plugins: [
-    nextui({
-      themes: {
-        light: {
-          colors: {
-            primary: '#4273a8',
-            secondary: '#23c7ac',
-            ...colors,
-          },
-        },
-      },
-    }),
-  ],
+  content: ['./components/**/*.{js,ts,jsx,tsx,mdx}', './app/**/*.{js,ts,jsx,tsx,mdx}'],
+  plugins: [],
   theme: {
     colors: {
-      primary: '#4273a8',
+      accent: '#D33F49',
+      primary: '#001524',
+      secondary: '#81C14B',
+      ...colors,
     },
     extend: {
       animation: {

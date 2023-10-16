@@ -1,37 +1,38 @@
 'use client'
 
 import Lenis from '@studio-freight/lenis'
-import { motion, MotionValue, useScroll, useTransform } from 'framer-motion'
+import { motion, useScroll, useSpring, useTransform } from 'framer-motion'
 import Image from 'next/image'
 import { useEffect, useRef } from 'react'
 
-import useDimension from '@/hooks/useDimension'
+interface Project {
+  description: string
+  image: string
+  name: string
+}
 
-import styles from './page.module.scss'
-
-const images = [
-  'iracingweekly.png',
-  'chattyio.png',
-  'chattyio.png',
-  'chattyio.png',
-  'chattyio.png',
-  'chattyio.png',
-  'chattyio.png',
-  'chattyio.png',
-  'chattyio.png',
-  'chattyio.png',
-  'chattyio.png',
-  'chattyio.png',
+const TestProjects = [
+  {
+    description: 'This is a test description for project 1',
+    image: 'iracingweekly.png',
+    name: 'Project 1',
+  },
+  {
+    description: 'This is a test description for project 2',
+    image: 'iracingweekly.png',
+    name: 'Project 2',
+  },
+  {
+    description: 'This is a test description for project 3',
+    image: 'iracingweekly.png',
+    name: 'Project 3',
+  },
 ]
 
 export default function Projects() {
-  const container = useRef(null)
-  const { height } = useDimension()
-  const { scrollYProgress } = useScroll({ offset: ['start end', 'end start'], target: container })
-  const y = useTransform(scrollYProgress, [0, 1], [0, height * 0.95])
-  const y2 = useTransform(scrollYProgress, [0, 1], [0, height * 2.3])
-  const y3 = useTransform(scrollYProgress, [0, 1], [0, height * 1.5])
-  const y4 = useTransform(scrollYProgress, [0, 1], [0, height * 0.5])
+  const ref = useRef(null)
+  const { scrollYProgress } = useScroll({ offset: ['end end', 'start start'], target: ref })
+  const scaleX = useSpring(scrollYProgress, { damping: 30, stiffness: 100 })
 
   useEffect(() => {
     const lenis = new Lenis()
@@ -43,36 +44,47 @@ export default function Projects() {
 
     requestAnimationFrame(raf)
   }, [])
+
   return (
-    <div className="flex flex-row">
-      <div ref={container} className={`${styles.gallery} w-1/2`}>
-        <Column images={[images[0], images[1], images[2], images[2]]} y={y} />
-        <Column images={[images[3], images[4], images[5], images[5]]} y={y2} />
-        <Column images={[images[6], images[7], images[8], images[8]]} y={y3} />
-        <Column images={[images[9], images[10], images[11], images[11]]} y={y4} />
-      </div>
-      <div className="flex w-1/2 flex-col bg-primary p-24 text-white">
+    <div ref={ref} className="relative bg-primary">
+      <div className="sticky left-0 top-0 z-50 pt-10 text-center">
         <h1 className="mb-2 text-4xl font-extrabold text-white md:text-7xl">Projects</h1>
+        <motion.div style={{ scaleX }} className="h-3 bg-accent" />
       </div>
+      {TestProjects.map((item) => (
+        <SingleProject item={item} key={item.name} />
+      ))}
     </div>
   )
 }
 
-interface ColumnProps {
-  images: string[]
-  y?: MotionValue<number>
-}
+const SingleProject = ({ item }: { item: Project }) => {
+  const ref = useRef(null)
+  const { scrollYProgress } = useScroll({ target: ref })
+  const y = useTransform(scrollYProgress, [0, 1], ['-300', '300'])
 
-const Column = ({ images, y }: ColumnProps) => {
   return (
-    <motion.div style={{ y }} className={styles.column}>
-      {images.map((src, index) => {
-        return (
-          <div key={index} className={styles.imageContainer}>
-            <Image src={`/images/${src}`} alt="project-image" fill />
+    <section ref={ref}>
+      <div className="flex h-full w-full items-center justify-center overflow-hidden">
+        <div className="m-auto flex h-full max-w-[1366px] items-center justify-center gap-8 ">
+          <div className="h-1/2 flex-1">
+            <Image
+              src={`/images/${item.image}`}
+              alt={'project-img'}
+              height={1000}
+              width={1000}
+              className="h-full w-full object-cover"
+            />
           </div>
-        )
-      })}
-    </motion.div>
+          <motion.div className="flex flex-col gap-10" style={{ y }}>
+            <h2 className="text-4xl font-bold  text-white">{item.name}</h2>
+            <p className="text-xl text-gray-500">{item.description}</p>
+            <button className="mx-4 w-1/2 rounded-md bg-accent p-3 text-lg font-semibold text-white">
+              View Project
+            </button>
+          </motion.div>
+        </div>
+      </div>
+    </section>
   )
 }

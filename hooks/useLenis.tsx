@@ -28,12 +28,12 @@ function useLenis(
       }
     | undefined,
 ) {
-  const [lenis, setLenisRef] = useState<Lenis>(new Lenis(lenisSettings))
+  const [lenis, setLenis] = useState<Lenis>(new Lenis(lenisSettings))
 
   useEffect(() => {
     const updateLenisRef = () => {
       const lenis = new Lenis(lenisSettings)
-      setLenisRef(lenis)
+      setLenis(lenis)
     }
 
     function raf(time: number) {

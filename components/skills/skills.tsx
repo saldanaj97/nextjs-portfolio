@@ -14,13 +14,12 @@ import {
   TbFileTypeSql,
 } from 'react-icons/tb'
 
-import ProgrammerImg from '@/public/images/hero-img.svg'
+import ProgrammerImg from '../../public/images/hero-img.svg'
 
 export default function Skills() {
   return (
     <section id="skills">
       <div className="flex h-screen flex-row">
-        <Image alt="dev-activity-img" src={ProgrammerImg} width={700} height={700} className="w-1/2 px-12" />
         <div className="flex w-1/2 flex-col bg-primary p-24 text-white">
           <h1 className="mb-2 text-4xl font-extrabold text-white md:text-7xl">Skills</h1>
           <p className="mb-2 text-xl text-white">
@@ -119,6 +118,7 @@ export default function Skills() {
             </ul>
           </div>
         </div>
+        <Image alt="dev-activity-img" src={ProgrammerImg} width={700} height={700} className="w-1/2 px-12" />
       </div>
     </section>
   )

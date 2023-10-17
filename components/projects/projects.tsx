@@ -77,7 +77,7 @@ const SingleProject = ({ item }: { item: Project }) => {
             />
           </div>
           <motion.div className="flex flex-col gap-10" style={{ y }}>
-            <h2 className="text-4xl font-bold  text-white">{item.name}</h2>
+            <h2 className="text-4xl font-bold text-white">{item.name}</h2>
             <p className="text-xl text-gray-500">{item.description}</p>
             <button className="mx-4 w-1/2 rounded-md bg-accent p-3 text-lg font-semibold text-white">
               View Project

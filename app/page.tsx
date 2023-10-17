@@ -1,3 +1,4 @@
+import Contact from '@/components/contact/contact'
 import Hero from '@/components/hero/hero'
 import Projects from '@/components/projects/projects'
 import Skills from '@/components/skills/skills'
@@ -9,6 +10,7 @@ export default function Home() {
       {/* <Goals /> */}
       <Skills />
       <Projects />
+      <Contact />
     </main>
   )
 }

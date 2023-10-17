@@ -88,12 +88,7 @@ export default function Contact() {
 
   const ContactForms = () => {
     return (
-      <motion.div
-        className="flex w-full flex-col items-center p-4 md:w-1/4"
-        variants={variants}
-        initial="initial"
-        whileInView="animate"
-      >
+      <motion.div className="flex w-full flex-col items-center p-4 md:w-1/4">
         <motion.div
           className="phoneSvg -z-1 absolute"
           initial={{ opacity: 1 }}
@@ -115,7 +110,7 @@ export default function Contact() {
 
         <motion.form
           ref={formRef}
-          className="flex w-full flex-col gap-10"
+          className="z-10 flex w-full flex-col gap-10"
           onSubmit={handleSubmit(onSubmit)}
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -151,9 +146,9 @@ export default function Contact() {
               type="submit"
               className="mx-auto rounded-md bg-accent px-8 py-3 text-lg font-semibold text-white hover:cursor-pointer"
             />
-            {formHasError && 'Error'}
-            {successfullySentForm && 'Success'}
           </motion.div>
+          {formHasError && 'Error'}
+          {successfullySentForm && 'Success'}
         </motion.form>
       </motion.div>
     )

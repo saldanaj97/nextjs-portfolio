@@ -12,10 +12,10 @@ export default function Hero() {
     <section id="hero">
       <div className="min-h-screen bg-primary">
         <div className="flex flex-col md:flex-row">
-          <div className="flex-row md:flex md:h-screen md:w-1/2">
+          <div className="flex-row justify-center md:flex md:h-screen md:w-1/2">
             <Image src={heroImg} alt="computer-image" className="h-full w-full overflow-hidden object-cover" />
           </div>
-          <div className="flex flex-col justify-center px-24 md:w-1/2">
+          <div className="flex flex-col justify-center p-8 md:w-1/2 md:px-24">
             <div className="mb-2 flex flex-row text-xl">
               <p className="text-4xl font-extrabold text-white md:text-7xl">
                 Hi, I&apos;m <span className="text-accent">Juan</span>{' '}

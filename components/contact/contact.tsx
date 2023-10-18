@@ -94,6 +94,7 @@ export default function Contact() {
           initial={{ opacity: 1 }}
           whileInView={{ opacity: 0 }}
           transition={{ delay: 3, duration: 1 }}
+          onAnimationComplete={() => {}}
         >
           <svg width="500px" height="500px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <motion.path
@@ -141,14 +142,16 @@ export default function Contact() {
             />
             {errors.company && <span>This field is required</span>}
           </motion.div>
-          <motion.div className="flex flex-row justify-center">
-            <input
-              type="submit"
-              className="mx-auto rounded-md bg-accent px-8 py-3 text-lg font-semibold text-white hover:cursor-pointer"
-            />
-          </motion.div>
-          {formHasError && 'Error'}
-          {successfullySentForm && 'Success'}
+          <div className="flex flex-col items-center justify-center">
+            {successfullySentForm && <p className="mb-4 text-green-500">Success</p>}
+            {formHasError && <p className="mb-4 text-red-500">Error submitting form</p>}
+            <motion.div className="flex flex-row justify-center">
+              <input
+                type="submit"
+                className="mx-auto rounded-md bg-accent px-8 py-3 text-lg font-semibold text-white hover:cursor-pointer"
+              />
+            </motion.div>
+          </div>
         </motion.form>
       </motion.div>
     )

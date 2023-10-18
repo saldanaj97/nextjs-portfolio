@@ -1,5 +1,7 @@
 'use client'
 
+import './skills.scss'
+
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 import { BiLogoTailwindCss } from 'react-icons/bi'
@@ -21,33 +23,33 @@ import ProgrammerImg from '../../public/images/hero-img.svg'
 
 export default function Skills() {
   const languages = [
-    { icon: <TbBrandTypescript size={50} className="text-white" />, text: 'Typescript' },
-    { icon: <TbBrandJavascript size={50} className="text-white" />, text: 'Javascript' },
-    { icon: <FaReact size={50} className="text-white" />, text: 'React' },
-    { icon: <TbBrandHtml5 size={50} className="text-white" />, text: 'HTML' },
-    { icon: <TbBrandPython size={50} className="text-white" />, text: 'Python' },
+    { icon: <TbBrandTypescript className="dynamic-icon text-white" />, text: 'Typescript' },
+    { icon: <TbBrandJavascript className="dynamic-icon text-white" />, text: 'Javascript' },
+    { icon: <FaReact className="dynamic-icon text-white" />, text: 'React' },
+    { icon: <TbBrandHtml5 className="dynamic-icon text-white" />, text: 'HTML' },
+    { icon: <TbBrandPython className="dynamic-icon text-white" />, text: 'Python' },
   ]
 
   const databases = [
-    { icon: <TbFileTypeSql size={50} className="text-white" />, text: 'SQL' },
-    { icon: <TbBrandPrisma size={50} className="text-white" />, text: 'Prisma' },
-    { icon: <TbBrandMongodb size={50} className="text-white" />, text: 'MongoDB' },
+    { icon: <TbFileTypeSql className="dynamic-icon text-white" />, text: 'SQL' },
+    { icon: <TbBrandPrisma className="dynamic-icon text-white" />, text: 'Prisma' },
+    { icon: <TbBrandMongodb className="dynamic-icon text-white" />, text: 'MongoDB' },
   ]
 
   const uiTechnologies = [
-    { icon: <TbBrandCss3 size={50} className="text-white" />, text: 'CSS' },
-    { icon: <BsFiletypeScss size={50} className="text-white" />, text: 'SCSS' },
-    { icon: <BiLogoTailwindCss size={50} className="text-white" />, text: 'Tailwind' },
-    { icon: <SiDaisyui size={50} className="text-white" />, text: 'Daisy UI' },
-    { icon: <SiChakraui size={50} className="text-white" />, text: 'Chakra UI' },
+    { icon: <TbBrandCss3 className="dynamic-icon text-white" />, text: 'CSS' },
+    { icon: <BsFiletypeScss className="dynamic-icon text-white" />, text: 'SCSS' },
+    { icon: <BiLogoTailwindCss className="dynamic-icon text-white" />, text: 'Tailwind' },
+    { icon: <SiDaisyui className="dynamic-icon text-white" />, text: 'Daisy UI' },
+    { icon: <SiChakraui className="dynamic-icon text-white" />, text: 'Chakra UI' },
   ]
 
   const otherTechnologies = [
-    { icon: <SiTrpc size={50} className="text-white" />, text: 'TRPC' },
-    { icon: <SiGraphql size={50} className="text-white" />, text: 'GraphQL' },
-    { icon: <SiGithub size={50} className="text-white" />, text: 'Github' },
-    { icon: <SiFigma size={50} className="text-white" />, text: 'Figma' },
-    { icon: <SiAdobexd size={50} className="text-white" />, text: 'Adobe XD' },
+    { icon: <SiTrpc className="dynamic-icon text-white" />, text: 'TRPC' },
+    { icon: <SiGraphql className="dynamic-icon text-white" />, text: 'GraphQL' },
+    { icon: <SiGithub className="dynamic-icon text-white" />, text: 'Github' },
+    { icon: <SiFigma className="dynamic-icon text-white" />, text: 'Figma' },
+    { icon: <SiAdobexd className="dynamic-icon text-white" />, text: 'Adobe XD' },
   ]
 
   const container = {
@@ -68,26 +70,28 @@ export default function Skills() {
 
   return (
     <section id="skills">
-      <div className="flex h-screen flex-row">
-        <motion.div className="mt-8 flex w-1/2 flex-col bg-primary px-24 text-white">
-          <h1 className="mb-2 text-4xl font-extrabold text-white md:text-7xl">Skills</h1>
-          <p className="mb-2 text-xl text-white">
+      <div className="flex flex-col md:h-screen md:flex-row">
+        <motion.div className="mt-8 flex w-full flex-col bg-primary p-8 text-white md:w-1/2 md:px-24">
+          <Image alt="dev-activity-img" src={ProgrammerImg} className="w-full px-12 md:hidden" />
+
+          <h1 className="mb-2 text-2xl font-extrabold text-white md:text-7xl">Skills</h1>
+          <p className="mb-2 text-sm text-white md:text-xl">
             Below are the different languages/frameworks, technologies, and UI libraries I have worked with.
           </p>
 
           <div className="mb-4 flex flex-col">
-            <p className="mb-4 w-[315px] text-xl font-semibold">Languages/Frameworks</p>
-            <ul className=" flex-wrap justify-center">
-              <motion.div className="mb-4 flex flex-row" variants={skillVarients}>
+            <p className="mb-4 text-xl font-semibold md:w-[315px]">Languages/Frameworks</p>
+            <ul className="flex-wrap justify-center">
+              <motion.div className="mb-4 flex flex-row justify-center" variants={skillVarients}>
                 {languages.map((skill, index) => (
                   <motion.li
                     key={index}
                     initial={{ opacity: 0, translateY: 20 }}
                     whileInView={{ opacity: 1, transition: { duration: 0.5 }, translateY: 0 }}
-                    className="mx-4 flex w-[100px] flex-col items-center"
+                    className="flex w-[75px] flex-col items-center md:w-[100px] lg:mx-4"
                   >
                     {skill.icon}
-                    <p>{skill.text}</p>
+                    <p className="text-sm lg:text-lg">{skill.text}</p>
                   </motion.li>
                 ))}
               </motion.div>
@@ -95,18 +99,18 @@ export default function Skills() {
           </div>
 
           <div className="mb-4 flex flex-col">
-            <p className="mb-4 w-[315px] text-xl font-semibold">Databases and ORMS</p>
+            <p className="mb-4 text-xl font-semibold md:w-[315px]">Databases and ORMS</p>
             <ul className="flex flex-row flex-wrap justify-center">
-              <motion.div className="mb-4 flex flex-row" variants={skillVarients}>
+              <motion.div className="mb-4 flex flex-row justify-center" variants={skillVarients}>
                 {databases.map((db, index) => (
                   <motion.li
                     key={index}
                     initial={{ opacity: 0, translateY: 20 }}
                     whileInView={{ opacity: 1, transition: { duration: 0.5 }, translateY: 0 }}
-                    className="mx-4 flex w-[100px] flex-col items-center"
+                    className="flex w-[75px] flex-col items-center md:w-[100px] lg:mx-4 "
                   >
                     {db.icon}
-                    <p>{db.text}</p>
+                    <p className="text-sm lg:text-lg">{db.text}</p>
                   </motion.li>
                 ))}
               </motion.div>
@@ -114,7 +118,7 @@ export default function Skills() {
           </div>
 
           <div className="mb-4 flex flex-col">
-            <p className="mb-4 w-[315px] text-xl font-semibold">UI Technologies</p>
+            <p className="mb-4 text-xl font-semibold md:w-[315px]">UI Technologies</p>
             <ul className="flex flex-row flex-wrap justify-center">
               <motion.div className="mb-4 flex flex-row" variants={skillVarients}>
                 {uiTechnologies.map((tech, index) => (
@@ -122,10 +126,10 @@ export default function Skills() {
                     key={index}
                     initial={{ opacity: 0, translateY: 20 }}
                     whileInView={{ opacity: 1, transition: { duration: 0.5 }, translateY: 0 }}
-                    className="mx-4 flex w-[100px] flex-col items-center"
+                    className="flex w-[75px] flex-col items-center md:w-[100px] lg:mx-4 "
                   >
                     {tech.icon}
-                    <p>{tech.text}</p>
+                    <p className="text-sm lg:text-lg">{tech.text}</p>
                   </motion.li>
                 ))}
               </motion.div>
@@ -133,7 +137,7 @@ export default function Skills() {
           </div>
 
           <div className="mb-4 flex flex-col">
-            <p className="mb-4 w-[315px] text-xl font-semibold">Other Technologies</p>
+            <p className="mb-4 text-xl font-semibold md:w-[315px]">Other Technologies</p>
             <ul className="flex flex-row flex-wrap justify-center">
               <motion.div className="mb-4 flex flex-row" variants={skillVarients}>
                 {otherTechnologies.map((tech, index) => (
@@ -142,17 +146,23 @@ export default function Skills() {
                     initial={{ opacity: 0, translateY: 20 }}
                     whileInView={{ opacity: 1, transition: { duration: 0.5 }, translateY: 0 }}
                     transition={{ duration: 0.5 }}
-                    className="mx-4 flex w-[100px] flex-col items-center"
+                    className="flex w-[75px] flex-col items-center md:w-[100px] lg:mx-4"
                   >
                     {tech.icon}
-                    <p>{tech.text}</p>
+                    <p className="text-sm lg:text-lg">{tech.text}</p>
                   </motion.li>
                 ))}
               </motion.div>
             </ul>
           </div>
         </motion.div>
-        <Image alt="dev-activity-img" src={ProgrammerImg} width={700} height={700} className="w-1/2 px-12" />
+        <Image
+          alt="dev-activity-img"
+          src={ProgrammerImg}
+          width={700}
+          height={700}
+          className="hidden md:flex md:w-1/2 md:px-12"
+        />
       </div>
     </section>
   )

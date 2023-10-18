@@ -15,16 +15,16 @@ export default function Hero() {
           <div className="flex-row justify-center md:flex md:h-screen md:w-1/2">
             <Image src={heroImg} alt="computer-image" className="h-full w-full overflow-hidden object-cover" />
           </div>
-          <div className="flex flex-col justify-center p-8 md:w-1/2 md:px-24">
+          <div className="flex w-full flex-col justify-center p-8 md:w-1/2 md:px-24">
             <div className="mb-2 flex flex-row text-xl">
-              <p className="text-4xl font-extrabold text-white md:text-7xl">
+              <p className="mb-2 text-2xl font-extrabold text-white md:text-7xl">
                 Hi, I&apos;m <span className="text-accent">Juan</span>{' '}
                 <span className="inline-block animate-hello">{emoji('👋')}</span>
               </p>
             </div>
-            <p className="mb-2 text-4xl text-white ">{greeting.jobTitle}</p>
-            <p className="mb-4 text-lg text-white md:text-xl">{greeting.subTitle}</p>
-            <div className="flex flex-row justify-center">
+            <p className="mb-2 text-lg text-white sm:text-4xl ">{greeting.jobTitle}</p>
+            <p className="mb-4 text-sm text-white md:text-xl">{greeting.subTitle}</p>
+            <div className="flex flex-row justify-center ">
               <HeroButton buttonText="Contact Me" href="" />
               <HeroButton buttonText="View Résumé" href={greeting.resumeLink} />
             </div>

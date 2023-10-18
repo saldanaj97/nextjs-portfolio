@@ -29,9 +29,9 @@ const variants = {
 const ContactInfo = () => {
   return (
     <motion.div className="flex flex-col items-center">
-      <motion.div className="flex w-3/4 flex-col justify-between bg-primary ">
-        <h1 className="mb-8 text-4xl font-bold text-white md:text-7xl">Let&apos;s work together</h1>
-        <div className="flex flex-col justify-around">
+      <motion.div className="flex flex-col items-center justify-between bg-primary md:w-3/4 lg:items-start">
+        <h1 className="mb-2 text-2xl font-extrabold text-white md:text-7xl">Let&apos;s work together</h1>
+        <div className="flex flex-col justify-around text-center lg:text-left">
           <motion.div className="mb-4 flex flex-col justify-center">
             <p className="font-bold text-white">Email</p>
             <a href="mailto:saldanaj97@gmail.com" className="text-white">
@@ -88,7 +88,7 @@ export default function Contact() {
 
   const ContactForms = () => {
     return (
-      <motion.div className="flex w-full flex-col items-center p-4 md:w-1/4">
+      <motion.div className="flex w-3/4 flex-col items-center p-2 md:p-4 lg:w-1/4">
         <motion.div
           className="phoneSvg -z-1 absolute"
           initial={{ opacity: 1 }}
@@ -117,27 +117,27 @@ export default function Contact() {
           whileInView={{ opacity: 1 }}
           transition={{ delay: 3, duration: 1 }}
         >
-          <motion.p className="text-4xl font-semibold text-white">Reach out</motion.p>
+          {/* <motion.p className="text-center text-2xl font-semibold text-white lg:text-left">Reach out</motion.p> */}
           <motion.div>
-            <motion.p className="text-lg text-white">Name</motion.p>
+            <motion.p className="text-sm text-white">Name</motion.p>
             <input placeholder="Name" {...register('name')} className="w-full rounded-md p-2" />
             {errors.company && <span>This field is required</span>}
           </motion.div>
           <motion.div>
-            <motion.p className="text-lg text-white">Email</motion.p>
-            <input placeholder="Email" className="w-full rounded-md p-2 " {...register('email', { required: true })} />
+            <motion.p className="text-sm text-white">Email</motion.p>
+            <input placeholder="Email" className="w-full rounded-md p-2" {...register('email', { required: true })} />
             {errors.company && <span>This field is required</span>}
           </motion.div>
           <motion.div>
-            <motion.p className="text-lg text-white">Company name</motion.p>
-            <input placeholder="Company" className="w-full rounded-md p-2 " {...register('company')} />
+            <motion.p className="ttext-sm text-white">Company name</motion.p>
+            <input placeholder="Company" className="w-full rounded-md p-2" {...register('company')} />
             {errors.company && <span>This field is required</span>}
           </motion.div>
           <motion.div>
-            <motion.p className="text-lg text-white">Message</motion.p>
+            <motion.p className="text-sm text-white">Message</motion.p>
             <textarea
               placeholder="Message"
-              className="h-48 w-full resize-none rounded-md p-2 "
+              className="h-48 w-full resize-none rounded-md p-2"
               {...register('message')}
             />
             {errors.company && <span>This field is required</span>}
@@ -160,7 +160,7 @@ export default function Contact() {
   return (
     <section id="contact">
       <motion.div
-        className="flex min-h-screen w-full flex-col items-center justify-center md:flex-row"
+        className="flex h-full w-full flex-col items-center justify-center lg:flex-row"
         ref={ref}
         variants={variants}
         initial="initial"

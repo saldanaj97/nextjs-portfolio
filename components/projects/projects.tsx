@@ -47,7 +47,7 @@ export default function Projects() {
 
   return (
     <div ref={ref} className="relative bg-primary">
-      <div className="sticky left-0 top-0 z-50 p-24">
+      <div className="sticky left-0 top-8 z-50 px-24">
         <h1 className="mb-2 text-center text-4xl font-extrabold text-white md:text-7xl">Projects</h1>
         <motion.div style={{ scaleX }} className="mx-8 h-3 bg-accent" />
       </div>

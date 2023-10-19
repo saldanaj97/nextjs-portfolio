@@ -47,7 +47,7 @@ export default function Projects() {
 
   return (
     <div ref={ref} className="relative bg-primary">
-      <div className="sticky left-0 top-8 z-50 px-24">
+      <div className="sticky left-0 top-8 z-50 lg:px-24">
         <h1 className="mb-2 text-center text-2xl font-extrabold text-white md:text-7xl">Projects</h1>
         <motion.div style={{ scaleX }} className="mx-8 mb-8 h-3 bg-accent" />
       </div>
@@ -66,7 +66,7 @@ const SingleProject = ({ item }: { item: Project }) => {
   const y = useTransform(scrollYProgress, [0, 1], ['-300', '300'])
 
   return (
-    <div ref={ref}>
+    <section ref={ref} className="lg: h-[50vh]">
       <div className="flex w-full items-center justify-center overflow-hidden">
         <div className="m-auto flex h-full max-w-[1366px] flex-col items-center justify-center gap-8 lg:flex-row ">
           <div className="md:h-1/2 md:flex-1">
@@ -78,7 +78,7 @@ const SingleProject = ({ item }: { item: Project }) => {
               className="object-cover md:h-full md:w-full"
             />
           </div>
-          <motion.div className="flex h-[50vh] flex-col gap-3 md:gap-10" style={{ y }}>
+          <motion.div className="flex flex-col gap-3 md:gap-10" style={{ y }}>
             <h2 className="text-xl font-bold text-white">{item.name}</h2>
             <p className="text-sm text-gray-500">{item.description}</p>
             <button className="mx-4 mb-8 rounded-md bg-accent p-2 text-sm font-semibold text-white md:w-1/2 md:text-lg">
@@ -87,6 +87,6 @@ const SingleProject = ({ item }: { item: Project }) => {
           </motion.div>
         </div>
       </div>
-    </div>
+    </section>
   )
 }

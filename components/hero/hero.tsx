@@ -9,11 +9,11 @@ import { greeting } from '../portfolioData'
 
 export default function Hero() {
   return (
-    <section id="hero">
+    <div id="hero">
       <div className="min-h-screen bg-primary">
         <div className="flex flex-col md:flex-row">
-          <div className="flex-row justify-center md:flex md:h-screen md:w-1/2">
-            <Image src={heroImg} alt="computer-image" className="h-full w-full overflow-hidden object-cover" />
+          <div className="m-auto flex w-3/5 flex-row justify-center md:h-screen md:w-1/2">
+            <Image src={heroImg} alt="computer-image" className=" overflow-hidden object-cover md:h-full md:w-full" />
           </div>
           <div className="flex w-full flex-col justify-center p-8 md:w-1/2 md:px-24">
             <div className="mb-2 flex flex-row text-xl">
@@ -31,6 +31,6 @@ export default function Hero() {
           </div>
         </div>
       </div>
-    </section>
+    </div>
   )
 }

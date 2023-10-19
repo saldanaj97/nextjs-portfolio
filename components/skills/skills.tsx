@@ -69,20 +69,20 @@ export default function Skills() {
   }
 
   return (
-    <section id="skills">
-      <div className="flex flex-col md:h-screen md:flex-row">
-        <motion.div className="mt-8 flex w-full flex-col bg-primary p-8 text-white md:w-1/2 md:px-24">
+    <div id="skills">
+      <div className="flex h-full flex-col md:h-screen md:flex-row">
+        <motion.div className="flex w-full flex-col bg-primary p-8 text-white md:w-1/2 md:px-24">
           <Image alt="dev-activity-img" src={ProgrammerImg} className="w-full px-12 md:hidden" />
 
-          <h1 className="mb-2 text-2xl font-extrabold text-white md:text-7xl">Skills</h1>
-          <p className="mb-2 text-sm text-white md:text-xl">
+          <h1 className="mb-2 text-center text-2xl font-extrabold text-white md:text-left md:text-7xl">Skills</h1>
+          <p className="mb-4 text-center text-sm text-white md:text-left md:text-xl">
             Below are the different languages/frameworks, technologies, and UI libraries I have worked with.
           </p>
 
-          <div className="mb-4 flex flex-col">
-            <p className="mb-4 text-xl font-semibold md:w-[315px]">Languages/Frameworks</p>
-            <ul className="flex-wrap justify-center">
-              <motion.div className="mb-4 flex flex-row justify-center" variants={skillVarients}>
+          <div className="lg:mb-4flex flex-col">
+            <p className="mb-4 text-lg font-semibold md:w-[315px]">Languages/Frameworks</p>
+            <ul className="flex flex-row justify-center">
+              <motion.div className="mb-4 flex flex-row flex-wrap justify-center" variants={skillVarients}>
                 {languages.map((skill, index) => (
                   <motion.li
                     key={index}
@@ -98,10 +98,10 @@ export default function Skills() {
             </ul>
           </div>
 
-          <div className="mb-4 flex flex-col">
-            <p className="mb-4 text-xl font-semibold md:w-[315px]">Databases and ORMS</p>
-            <ul className="flex flex-row flex-wrap justify-center">
-              <motion.div className="mb-4 flex flex-row justify-center" variants={skillVarients}>
+          <div className="lg:mb-4flex flex-col">
+            <p className="mb-4 text-lg font-semibold md:w-[315px]">Databases and ORMS</p>
+            <ul className="flex flex-row justify-center">
+              <motion.div className="mb-4 flex flex-row flex-wrap justify-center" variants={skillVarients}>
                 {databases.map((db, index) => (
                   <motion.li
                     key={index}
@@ -117,10 +117,10 @@ export default function Skills() {
             </ul>
           </div>
 
-          <div className="mb-4 flex flex-col">
-            <p className="mb-4 text-xl font-semibold md:w-[315px]">UI Technologies</p>
-            <ul className="flex flex-row flex-wrap justify-center">
-              <motion.div className="mb-4 flex flex-row" variants={skillVarients}>
+          <div className="flex flex-col lg:mb-4">
+            <p className="mb-4 text-lg font-semibold md:w-[315px]">UI Technologies</p>
+            <ul className="flex flex-row justify-center">
+              <motion.div className="mb-4 flex flex-row flex-wrap justify-center" variants={skillVarients}>
                 {uiTechnologies.map((tech, index) => (
                   <motion.li
                     key={index}
@@ -136,10 +136,10 @@ export default function Skills() {
             </ul>
           </div>
 
-          <div className="mb-4 flex flex-col">
-            <p className="mb-4 text-xl font-semibold md:w-[315px]">Other Technologies</p>
-            <ul className="flex flex-row flex-wrap justify-center">
-              <motion.div className="mb-4 flex flex-row" variants={skillVarients}>
+          <div className="flex flex-col lg:mb-4">
+            <p className="mb-4 text-lg font-semibold md:w-[315px]">Other Technologies</p>
+            <ul className="flex flex-row justify-center">
+              <motion.div className="mb-4 flex flex-row flex-wrap justify-center" variants={skillVarients}>
                 {otherTechnologies.map((tech, index) => (
                   <motion.li
                     key={index}
@@ -164,6 +164,6 @@ export default function Skills() {
           className="hidden md:flex md:w-1/2 md:px-12"
         />
       </div>
-    </section>
+    </div>
   )
 }

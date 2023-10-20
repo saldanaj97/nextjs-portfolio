@@ -30,7 +30,9 @@ const ContactInfo = () => {
   return (
     <motion.div className="flex flex-col items-center">
       <motion.div className="flex flex-col items-center justify-between bg-primary md:w-3/4 lg:items-start">
-        <h1 className="mb-2 text-2xl font-extrabold text-white md:text-7xl">Let&apos;s work together</h1>
+        <h1 className="mb-2 text-center text-2xl font-extrabold text-white md:text-3xl lg:text-left lg:text-4xl xl:text-5xl">
+          Let&apos;s work together
+        </h1>
         <div className="flex flex-col justify-around text-center lg:text-left">
           <motion.div className="mb-4 flex flex-col justify-center">
             <p className="font-bold text-white">Email</p>
@@ -117,7 +119,6 @@ export default function Contact() {
           whileInView={{ opacity: 1 }}
           transition={{ delay: 3, duration: 1 }}
         >
-          {/* <motion.p className="text-center text-2xl font-semibold text-white lg:text-left">Reach out</motion.p> */}
           <motion.div>
             <motion.p className="text-sm text-white">Name</motion.p>
             <input placeholder="Name" {...register('name')} className="w-full rounded-md p-2 text-sm" />

@@ -9,25 +9,27 @@ import { greeting } from '../portfolioData'
 
 export default function Hero() {
   return (
-    <div id="hero">
-      <div className="min-h-screen bg-primary">
-        <div className="flex flex-col md:flex-row">
-          <div className="m-auto flex w-3/5 flex-row justify-center md:h-screen md:w-1/2">
-            <Image src={heroImg} alt="computer-image" className=" overflow-hidden object-cover md:h-full md:w-full" />
+    <div id="hero" className="bg-primary">
+      <div className="flex flex-col lg:flex-row">
+        <div className="m-auto flex w-3/5 flex-row justify-center lg:h-screen lg:w-1/2">
+          <Image
+            src={heroImg}
+            alt="computer-image"
+            className="overflow-hidden object-cover pt-16 md:h-full md:w-full lg:pt-0"
+          />
+        </div>
+        <div className="flex w-full flex-col justify-center p-8 lg:w-1/2 lg:px-24">
+          <div className="mb-2 flex flex-row text-xl">
+            <p className="mb-2 text-2xl font-extrabold text-white lg:text-4xl xl:text-5xl">
+              Hi, I&apos;m <span className="text-accent">Juan</span>
+              <span className="inline-block animate-hello">{emoji('👋')}</span>
+            </p>
           </div>
-          <div className="flex w-full flex-col justify-center p-8 md:w-1/2 md:px-24">
-            <div className="mb-2 flex flex-row text-xl">
-              <p className="mb-2 text-2xl font-extrabold text-white md:text-7xl">
-                Hi, I&apos;m <span className="text-accent">Juan</span>{' '}
-                <span className="inline-block animate-hello">{emoji('👋')}</span>
-              </p>
-            </div>
-            <p className="mb-2 text-lg text-white sm:text-4xl ">{greeting.jobTitle}</p>
-            <p className="mb-4 text-sm text-white md:text-xl">{greeting.subTitle}</p>
-            <div className="flex flex-row justify-center ">
-              <HeroButton buttonText="Contact Me" href="" />
-              <HeroButton buttonText="View Résumé" href={greeting.resumeLink} />
-            </div>
+          <p className="mb-2 text-lg text-white lg:text-base xl:text-xl">{greeting.jobTitle}</p>
+          <p className="mb-4 text-sm text-white lg:text-base xl:text-xl">{greeting.subTitle}</p>
+          <div className="flex flex-row justify-center ">
+            <HeroButton buttonText="Contact Me" href="" />
+            <HeroButton buttonText="View Résumé" href={greeting.resumeLink} />
           </div>
         </div>
       </div>

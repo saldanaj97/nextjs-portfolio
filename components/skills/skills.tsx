@@ -70,25 +70,27 @@ export default function Skills() {
 
   return (
     <div id="skills">
-      <div className="flex h-full flex-col md:h-screen md:flex-row">
-        <motion.div className="flex w-full flex-col bg-primary p-8 text-white md:w-1/2 md:px-24">
-          <Image alt="dev-activity-img" src={ProgrammerImg} className="w-full px-12 md:hidden" />
+      <div className="flex h-full flex-col md:flex-row ">
+        <motion.div className="flex w-full flex-col bg-primary p-8 text-white lg:w-1/2 xl:px-8">
+          <Image alt="dev-activity-img" src={ProgrammerImg} className="w-full md:hidden" />
 
-          <h1 className="mb-2 text-center text-2xl font-extrabold text-white md:text-left md:text-7xl">Skills</h1>
-          <p className="mb-4 text-center text-sm text-white md:text-left md:text-xl">
+          <h1 className="mb-2 text-center text-2xl font-extrabold text-white md:text-left md:text-3xl lg:text-4xl xl:text-5xl">
+            Skills
+          </h1>
+          <p className="mb-4 text-center text-sm text-white md:text-left lg:text-base xl:text-xl">
             Below are the different languages/frameworks, technologies, and UI libraries I have worked with.
           </p>
 
-          <div className="lg:mb-4flex flex-col">
-            <p className="mb-4 text-lg font-semibold md:w-[315px]">Languages/Frameworks</p>
-            <ul className="flex flex-row justify-center">
+          <div className="flex flex-col lg:mb-4">
+            <p className="mb-4 text-base font-semibold md:w-[315px] xl:text-xl">Languages/Frameworks</p>
+            <ul className="flex flex-row justify-center lg:w-[500px] xl:lg:w-[600px]">
               <motion.div className="mb-4 flex flex-row flex-wrap justify-center" variants={skillVarients}>
                 {languages.map((skill, index) => (
                   <motion.li
                     key={index}
                     initial={{ opacity: 0, translateY: 20 }}
                     whileInView={{ opacity: 1, transition: { duration: 0.5 }, translateY: 0 }}
-                    className="flex w-[75px] flex-col items-center md:w-[100px] lg:mx-4"
+                    className="flex w-[75px] flex-col items-center lg:mx-4"
                   >
                     {skill.icon}
                     <p className="text-sm lg:text-lg">{skill.text}</p>
@@ -98,9 +100,9 @@ export default function Skills() {
             </ul>
           </div>
 
-          <div className="lg:mb-4flex flex-col">
-            <p className="mb-4 text-lg font-semibold md:w-[315px]">Databases and ORMS</p>
-            <ul className="flex flex-row justify-center">
+          <div className="flex flex-col lg:mb-4">
+            <p className="mb-4 text-base font-semibold md:w-[315px] xl:text-xl">Databases and ORMS</p>
+            <ul className="flex flex-row justify-center lg:w-[500px] xl:lg:w-[600px]">
               <motion.div className="mb-4 flex flex-row flex-wrap justify-center" variants={skillVarients}>
                 {databases.map((db, index) => (
                   <motion.li
@@ -118,8 +120,8 @@ export default function Skills() {
           </div>
 
           <div className="flex flex-col lg:mb-4">
-            <p className="mb-4 text-lg font-semibold md:w-[315px]">UI Technologies</p>
-            <ul className="flex flex-row justify-center">
+            <p className="mb-4 text-base font-semibold md:w-[315px] xl:text-xl">UI Technologies</p>
+            <ul className="flex flex-row justify-center lg:w-[500px] xl:lg:w-[600px]">
               <motion.div className="mb-4 flex flex-row flex-wrap justify-center" variants={skillVarients}>
                 {uiTechnologies.map((tech, index) => (
                   <motion.li
@@ -137,8 +139,8 @@ export default function Skills() {
           </div>
 
           <div className="flex flex-col lg:mb-4">
-            <p className="mb-4 text-lg font-semibold md:w-[315px]">Other Technologies</p>
-            <ul className="flex flex-row justify-center">
+            <p className="mb-4 text-base font-semibold md:w-[315px] xl:text-xl">Other Technologies</p>
+            <ul className="flex flex-row justify-center lg:w-[500px] xl:lg:w-[600px]">
               <motion.div className="mb-4 flex flex-row flex-wrap justify-center" variants={skillVarients}>
                 {otherTechnologies.map((tech, index) => (
                   <motion.li
@@ -161,7 +163,7 @@ export default function Skills() {
           src={ProgrammerImg}
           width={700}
           height={700}
-          className="hidden md:flex md:w-1/2 md:px-12"
+          className="hidden md:w-1/2 lg:flex lg:px-12"
         />
       </div>
     </div>

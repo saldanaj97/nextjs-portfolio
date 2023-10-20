@@ -75,8 +75,8 @@ const SingleProject = ({ item }: { item: Project }) => {
             <Image
               src={`/images/${item.image}`}
               alt={'project-img'}
-              height={600}
-              width={600}
+              height={800}
+              width={800}
               className="object-cover md:h-full md:w-full"
             />
           </div>

@@ -4,6 +4,10 @@ import emailjs from '@emailjs/browser'
 import { motion, useInView } from 'framer-motion'
 import { useRef, useState } from 'react'
 import { SubmitHandler, useForm } from 'react-hook-form'
+import { FaGithub, FaLinkedin } from 'react-icons/fa'
+import { IoMailSharp } from 'react-icons/io5'
+
+import { contactInfo, socialMediaLinks } from '../portfolioData'
 
 type Inputs = {
   name: string
@@ -31,24 +35,24 @@ const ContactInfo = () => {
     <motion.div className="flex flex-col items-center">
       <motion.div className="flex flex-col items-center justify-between bg-primary md:w-3/4 lg:items-start">
         <h1 className="mb-2 text-center text-2xl font-extrabold text-white md:text-3xl lg:text-left lg:text-4xl xl:text-5xl">
-          Let&apos;s work together
+          {contactInfo.title}
         </h1>
         <div className="flex flex-col justify-around text-center lg:text-left">
           <motion.div className="mb-4 flex flex-col justify-center">
             <p className="font-bold text-white">Email</p>
-            <a href="mailto:saldanaj97@gmail.com" className="text-white">
-              Saldanaj97@gmail.com
+            <a href={`mailto:${socialMediaLinks.gmail}`} className="text-white">
+              {socialMediaLinks.gmail}
             </a>
           </motion.div>
           <motion.div className="mb-4 flex flex-col">
             <p className="font-bold text-white">LinkedIn</p>
-            <a href="https://www.linkedin.com/in/juan-saldana/" className="text-white">
-              Juan Saldana
+            <a href={contactInfo.linkedIn} className="text-white">
+              {contactInfo.name}
             </a>
           </motion.div>
           <motion.div className="mb-4 flex flex-col">
             <p className="font-bold text-white">Location</p>
-            <p className="text-white">Dallas, TX</p>
+            <p className="text-white">{contactInfo.location}</p>
           </motion.div>
         </div>
       </motion.div>
@@ -88,6 +92,27 @@ export default function Contact() {
       )
   }
 
+  const SocialMediaButtons = () => {
+    return (
+      <motion.div className="flex flex-row justify-evenly">
+        <a href={socialMediaLinks.linkedin} target="_blank" rel="noreferrer">
+          <FaLinkedin size={50} className="mx-4 cursor-pointer text-white" />
+        </a>
+        <a href={socialMediaLinks.github} className="mx-4 cursor-pointer text-white" target="_blank" rel="noreferrer">
+          <FaGithub size={50} />
+        </a>
+        <a
+          href={`mailto:${socialMediaLinks.gmail}`}
+          className="mx-4 cursor-pointer text-white"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <IoMailSharp size={50} />
+        </a>
+      </motion.div>
+    )
+  }
+
   const ContactForms = () => {
     return (
       <motion.div className="flex w-3/4 flex-col items-center p-2 md:p-4 lg:w-1/4">
@@ -109,6 +134,16 @@ export default function Contact() {
               transition={{ duration: 3 }}
             />
           </svg>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ delay: 3, duration: 1 }}
+          className="z-10"
+        >
+          <SocialMediaButtons />
+          <p className="my-8 text-center font-bold text-white">OR</p>
         </motion.div>
 
         <motion.form

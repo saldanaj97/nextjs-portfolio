@@ -5,8 +5,6 @@ import eCommerce from '@/public/images/e-commerce.png'
 import iRacingWeeklyScreenshot from '@/public/images/iracingweekly.png'
 import ratingForm from '@/public/images/rating-component.png'
 
-//require('dotenv').config({ path: '../.env' })
-
 const greeting = {
   jobTitle: 'Junior Software Engineer',
   resumeLink:
@@ -82,9 +80,12 @@ const deployedProjects = {
 
 const contactInfo = {
   email_address: 'saldanaj97@gmail.com',
+  linkedIn: 'https://www.linkedin.com/in/juan-saldana/',
+  location: 'Dallas, TX',
+  name: 'Juan Saldana',
   number: '(469)432-9695',
   subtitle: "Let's connect and explore how my skills and expertise can contribute to your software engineering needs.",
-  title: emoji('Contact Me ☎️'),
+  title: "Let's Work Together",
 }
 
 export { greeting, socialMediaLinks, aboutMe, openSource, deployedProjects, contactInfo }

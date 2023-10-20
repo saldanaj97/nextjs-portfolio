@@ -6,6 +6,7 @@ import heroImg from '@/public/images/hero-img.jpg'
 
 import HeroButton from '../buttons/heroButton'
 import { greeting } from '../portfolioData'
+import { socialMediaLinks } from '../portfolioData'
 
 export default function Hero() {
   return (
@@ -28,7 +29,7 @@ export default function Hero() {
           <p className="mb-2 text-base text-white lg:text-lg xl:text-xl">{greeting.jobTitle}</p>
           <p className="mb-4 text-sm text-white lg:text-base xl:text-lg">{greeting.subTitle}</p>
           <div className="flex flex-row justify-center ">
-            <HeroButton buttonText="Contact Me" href="" />
+            <HeroButton buttonText="Contact Me" href={`mailto:${socialMediaLinks.gmail}`} />
             <HeroButton buttonText="View Résumé" href={greeting.resumeLink} />
           </div>
         </div>

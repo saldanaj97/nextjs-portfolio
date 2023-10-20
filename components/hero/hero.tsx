@@ -25,8 +25,8 @@ export default function Hero() {
               <span className="inline-block animate-hello">{emoji('👋')}</span>
             </p>
           </div>
-          <p className="mb-2 text-lg text-white lg:text-base xl:text-xl">{greeting.jobTitle}</p>
-          <p className="mb-4 text-sm text-white lg:text-base xl:text-xl">{greeting.subTitle}</p>
+          <p className="mb-2 text-base text-white lg:text-lg xl:text-xl">{greeting.jobTitle}</p>
+          <p className="mb-4 text-sm text-white lg:text-base xl:text-lg">{greeting.subTitle}</p>
           <div className="flex flex-row justify-center ">
             <HeroButton buttonText="Contact Me" href="" />
             <HeroButton buttonText="View Résumé" href={greeting.resumeLink} />

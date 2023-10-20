@@ -47,11 +47,11 @@ export default function Projects() {
 
   return (
     <div ref={ref} className="relative bg-primary">
-      <div className="sticky left-0 top-4 z-50 lg:px-24">
+      <div className="sticky left-0 top-4 z-50 lg:px-8">
         <h1 className="mb-2 text-center text-2xl font-extrabold text-white md:text-3xl lg:text-4xl xl:text-5xl">
           Projects
         </h1>
-        <motion.div style={{ scaleX }} className="mx-8 mb-8 h-3 bg-accent" />
+        <motion.div style={{ scaleX }} className="mb-8 h-3 bg-accent" />
       </div>
       <div className="flex flex-col">
         {TestProjects.map((item) => (

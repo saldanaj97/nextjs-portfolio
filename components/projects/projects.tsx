@@ -2,32 +2,16 @@
 
 import Lenis from '@studio-freight/lenis'
 import { motion, useScroll, useSpring, useTransform } from 'framer-motion'
-import Image from 'next/image'
+import Image, { StaticImageData } from 'next/image'
 import { useEffect, useRef } from 'react'
+
+import { deployedProjects } from '../portfolioData'
 
 interface Project {
   description: string
-  image: string
+  screenshot: StaticImageData
   name: string
 }
-
-const TestProjects = [
-  {
-    description: 'This is a test description for project 1',
-    image: 'iracingweekly.png',
-    name: 'Project 1',
-  },
-  {
-    description: 'This is a test description for project 2',
-    image: 'iracingweekly.png',
-    name: 'Project 2',
-  },
-  {
-    description: 'This is a test description for project 3',
-    image: 'iracingweekly.png',
-    name: 'Project 3',
-  },
-]
 
 export default function Projects() {
   const ref = useRef(null)
@@ -54,8 +38,8 @@ export default function Projects() {
         <motion.div style={{ scaleX }} className="mb-8 h-3 bg-accent" />
       </div>
       <div className="flex flex-col">
-        {TestProjects.map((item) => (
-          <SingleProject item={item} key={item.name} />
+        {deployedProjects.projects.map((project) => (
+          <SingleProject item={project} key={project.name} />
         ))}
       </div>
     </div>
@@ -71,16 +55,10 @@ const SingleProject = ({ item }: { item: Project }) => {
     <div ref={ref} className="h-[65vh] md:h-[75vh] lg:h-[80vh]">
       <div className="flex w-full items-center justify-center overflow-hidden">
         <div className="m-auto flex h-full max-w-[1366px] flex-col items-center justify-center gap-5 lg:flex-row ">
-          <div className="md:h-1/2 md:flex-1">
-            <Image
-              src={`/images/${item.image}`}
-              alt={'project-img'}
-              height={800}
-              width={800}
-              className="object-cover md:h-full md:w-full"
-            />
+          <div className="w-1/2">
+            <Image src={item.screenshot} alt={'project-img'} className="object-cover" />
           </div>
-          <motion.div className="flex flex-col gap-3 md:gap-5 xl:gap-7" style={{ y }}>
+          <motion.div className="flex w-1/2 flex-col gap-3 md:gap-5 xl:gap-7" style={{ y }}>
             <h2 className="text-center text-xl font-bold text-white lg:text-left">{item.name}</h2>
             <p className="text-sm text-gray-500">{item.description}</p>
             <div className="flex flex-row justify-center">

@@ -43,21 +43,21 @@ const deployedProjects = {
   projects: [
     {
       description:
-        'This tool will be used for viewing which races for every series are occuring each week of the season along with the time of the next available race. The user can select which cars and tracks they own as well as select which series they want to follow. ',
-      name: 'iRacingWeekly',
-      repoUrl: 'https://github.com/saldanaj97/iRacing-Race-Info',
-      screenshot: iRacingWeeklyScreenshot,
-      techUsed: ['MongoDB', 'Express', 'React', 'Node', 'Axios', 'Material UI'],
-      url: 'https://iracingweekly.netlify.app/',
-    },
-    {
-      description:
         'An e-commerce website built with Next.js using designs provided by FrontendMentor.io. This app is fully responsive(mobile and desktop) and features a shopping cart, product page, and checkout widget with working state. ',
       name: 'E-Commerce Website',
       repoUrl: 'https://github.com/saldanaj97/ecommerce-product-page-main',
       screenshot: eCommerce,
       techUsed: ['HTML', 'CSS', 'JavaScript', 'React', 'Next.js'],
       url: 'https://fe-ecommerce-site.netlify.app/',
+    },
+    {
+      description:
+        'This tool will be used for viewing which races for every series are occuring each week of the season along with the time of the next available race. The user can select which cars and tracks they own as well as select which series they want to follow. ',
+      name: 'iRacingWeekly',
+      repoUrl: 'https://github.com/saldanaj97/iRacing-Race-Info',
+      screenshot: iRacingWeeklyScreenshot,
+      techUsed: ['MongoDB', 'Express', 'React', 'Node', 'Axios', 'Material UI'],
+      url: 'https://iracingweekly.netlify.app/',
     },
     {
       description:
@@ -78,7 +78,6 @@ const deployedProjects = {
       url: 'https://cerulean-quokka-92dfde.netlify.app/',
     },
   ],
-  title: 'Deployed Projects',
 }
 
 const contactInfo = {

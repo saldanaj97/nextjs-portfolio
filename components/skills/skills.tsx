@@ -52,17 +52,6 @@ export default function Skills() {
     { icon: <SiAdobexd className="dynamic-icon text-white" />, text: 'Adobe XD' },
   ]
 
-  const container = {
-    hidden: { rotate: 90 },
-    show: {
-      rotate: 0,
-      transition: {
-        delayChildren: 0.3,
-        staggerChildren: 0.1,
-      },
-    },
-  }
-
   const skillVarients = {
     hidden: { opacity: 0, y: 30 },
     visible: { opacity: 1, transition: { delay: 0.2 }, y: 0 },

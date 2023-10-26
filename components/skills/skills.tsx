@@ -70,7 +70,7 @@ export default function Skills() {
 
   return (
     <div id="skills">
-      <div className="flex h-full flex-col md:flex-row ">
+      <div className="flex h-full flex-col md:flex-row xl:mx-24 ">
         <motion.div className="flex w-full flex-col bg-primary p-8 text-white lg:w-1/2 xl:px-8">
           <Image alt="dev-activity-img" src={ProgrammerImg} className="w-full md:hidden" />
 

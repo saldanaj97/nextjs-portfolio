@@ -47,18 +47,20 @@ const ContactInfo = () => {
 }
 
 const ContactForms = () => {
-  const variants = {
-    animate: {
+  const container = {
+    hidden: { opacity: 0 },
+    show: {
       opacity: 1,
       transition: {
-        duration: 0.3,
+        delayChildren: 0.3,
         staggerChildren: 0.1,
       },
-      y: 0,
     },
-    initial: {
-      opacity: 0,
-    },
+  }
+
+  const item = {
+    hidden: { opacity: 0, translateY: 20 },
+    show: { opacity: 1, translateY: 0 },
   }
 
   const {
@@ -91,59 +93,64 @@ const ContactForms = () => {
   }
 
   return (
-    <motion.div className="flex w-3/4 flex-col items-center p-2 md:w-1/2 md:p-4 lg:w-1/3">
+    <motion.div
+      className="flex w-3/4 flex-col items-center p-2 md:w-1/2 md:p-4 lg:w-1/3"
+      variants={container}
+      animate="show"
+      initial="hidden"
+    >
       <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} transition={{ delay: 0, duration: 1 }}>
         <SocialMediaButtons />
         <p className="my-8 text-center font-bold text-white">OR</p>
       </motion.div>
 
-      <motion.form
-        ref={formRef}
-        className="flex w-full flex-col gap-10"
-        onSubmit={handleSubmit(onSubmit)}
+      <motion.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ delay: 1, duration: 1 }}
+        className="flex w-full"
       >
-        <motion.div>
-          <motion.p className="text-sm text-white">Name</motion.p>
-          <input placeholder="Name" {...register('name')} className="w-full rounded-md p-2 text-sm" />
-          {errors.company && <span>This field is required</span>}
-        </motion.div>
-        <motion.div>
-          <motion.p className="text-sm text-white">Email</motion.p>
-          <input
-            placeholder="Email"
-            className="w-full rounded-md p-2 text-sm"
-            {...register('email', { required: true })}
-          />
-          {errors.company && <span>This field is required</span>}
-        </motion.div>
-        <motion.div>
-          <motion.p className="text-sm text-white">Company name</motion.p>
-          <input placeholder="Company" className="w-full rounded-md p-2 text-sm" {...register('company')} />
-          {errors.company && <span>This field is required</span>}
-        </motion.div>
-        <motion.div>
-          <motion.p className="text-sm text-white">Message</motion.p>
-          <textarea
-            placeholder="Message"
-            className="h-48 w-full resize-none rounded-md p-2 text-sm"
-            {...register('message')}
-          />
-          {errors.company && <span>This field is required</span>}
-        </motion.div>
-        <div className="flex flex-col items-center justify-center">
-          {successfullySentForm && <p className="mb-4 text-green-500">Success</p>}
-          {formHasError && <p className="mb-4 text-red-500">Error submitting form</p>}
-          <motion.div className="flex flex-row justify-center">
-            <input
-              type="submit"
-              className="mx-auto rounded-md bg-accent px-8 py-3 text-lg font-semibold text-white hover:cursor-pointer"
-            />
+        <motion.form ref={formRef} onSubmit={handleSubmit(onSubmit)} className="flex w-full flex-col gap-10">
+          <motion.div variants={item}>
+            <motion.p className="text-sm text-white">Name</motion.p>
+            <input placeholder="Name" {...register('name')} className="w-full rounded-md p-2 text-sm" />
+            {errors.name && <span>This field is required</span>}
           </motion.div>
-        </div>
-      </motion.form>
+          <motion.div variants={item}>
+            <motion.p className="text-sm text-white">Email</motion.p>
+            <input
+              placeholder="Email"
+              className="w-full rounded-md p-2 text-sm"
+              {...register('email', { required: true })}
+            />
+            {errors.email && <span>This field is required</span>}
+          </motion.div>
+          <motion.div variants={item}>
+            <motion.p className="text-sm text-white">Company name</motion.p>
+            <input placeholder="Company" className="w-full rounded-md p-2 text-sm" {...register('company')} />
+            {errors.company && <span>This field is required</span>}
+          </motion.div>
+          <motion.div variants={item}>
+            <motion.p className="text-sm text-white">Message</motion.p>
+            <textarea
+              placeholder="Message"
+              className="h-48 w-full resize-none rounded-md p-2 text-sm"
+              {...register('message')}
+            />
+            {errors.message && <span>This field is required</span>}
+          </motion.div>
+          <div className="flex flex-col items-center justify-center">
+            {successfullySentForm && <p className="mb-4 text-green-500">Success</p>}
+            {formHasError && <p className="mb-4 text-red-500">Error submitting form</p>}
+            <motion.div variants={item} className="flex flex-row justify-center">
+              <input
+                type="submit"
+                className="mx-auto rounded-md bg-accent px-8 py-3 text-lg font-semibold text-white hover:cursor-pointer"
+              />
+            </motion.div>
+          </div>
+        </motion.form>
+      </motion.div>
     </motion.div>
   )
 }

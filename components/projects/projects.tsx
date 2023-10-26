@@ -52,7 +52,7 @@ const SingleProject = ({ item }: { item: Project }) => {
   const y = useTransform(scrollYProgress, [0, 1], ['-300', '300'])
 
   return (
-    <div ref={ref} className="h-[65vh] md:h-[75vh] lg:h-[80vh]">
+    <div ref={ref} className="h-[65vh] md:h-[75vh] lg:mx-24 lg:h-[80vh]">
       <div className="flex w-full items-center justify-center overflow-hidden">
         <div className="m-auto flex h-full max-w-[1366px] flex-col items-center justify-center gap-5 lg:flex-row ">
           <div className="w-1/2">

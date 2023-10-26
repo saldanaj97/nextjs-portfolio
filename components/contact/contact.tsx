@@ -67,12 +67,15 @@ const ContactForms = () => {
     formState: { errors },
     handleSubmit,
     register,
+    reset,
   } = useForm<Inputs>()
+
   const formRef = useRef(null)
   const [formHasError, setFormHasError] = useState(false)
   const [successfullySentForm, setSuccessfullySentForm] = useState(false)
 
   const onSubmit: SubmitHandler<Inputs> = () => {
+    console.log(formRef.current)
     emailjs
       .sendForm(
         process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
@@ -82,6 +85,7 @@ const ContactForms = () => {
       )
       .then(
         (result) => {
+          reset()
           setSuccessfullySentForm(true)
           console.log(result.text)
         },

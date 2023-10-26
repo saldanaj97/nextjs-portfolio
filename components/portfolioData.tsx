@@ -41,16 +41,7 @@ const deployedProjects = {
   projects: [
     {
       description:
-        'An e-commerce website built with Next.js using designs provided by FrontendMentor.io. This app is fully responsive(mobile and desktop) and features a shopping cart, product page, and checkout widget with working state. ',
-      name: 'E-Commerce Website',
-      repoUrl: 'https://github.com/saldanaj97/ecommerce-product-page-main',
-      screenshot: eCommerce,
-      techUsed: ['HTML', 'CSS', 'JavaScript', 'React', 'Next.js'],
-      url: 'https://fe-ecommerce-site.netlify.app/',
-    },
-    {
-      description:
-        'This tool will be used for viewing which races for every series are occuring each week of the season along with the time of the next available race. The user can select which cars and tracks they own as well as select which series they want to follow. ',
+        "This tool is designed specifically for iRacing Motorsport Simulator enthusiasts. It's your go-to platform for staying up to date with weekly race events across various series throughout the season. Get real-time access to the race schedule and the timing of the next race in your favorite simulator. You have the freedom to personalize your experience by selecting your owned cars, preferred tracks, and the specific iRacing series you want to follow closely.",
       name: 'iRacingWeekly',
       repoUrl: 'https://github.com/saldanaj97/iRacing-Race-Info',
       screenshot: iRacingWeeklyScreenshot,
@@ -59,7 +50,7 @@ const deployedProjects = {
     },
     {
       description:
-        'Chatroom application built with React and Socket.io. This group chat app features user authentication, multi-user per group, online user lists, multi-group support per-user, and a chat history. ',
+        "I've developed a dynamic chatroom application using React and Socket.io. This feature-rich group chat app includes user authentication, supports multiple users per group, offers real-time online user lists, provides multi-group support per user, and keeps a comprehensive chat history.",
       name: 'Chatty.io',
       repoUrl: 'https://github.com/saldanaj97/ChatApp',
       screenshot: chattyio,
@@ -68,7 +59,16 @@ const deployedProjects = {
     },
     {
       description:
-        'A multi-step rating form built with React and Next.js with utilizing designs from FrontendMentor.io. This app features a form with two steps, error checking, and state management. ',
+        'Crafted with Next.js, this e-commerce website beautifully fuses design elements from FrontendMentor.io. It boasts full responsiveness, effortlessly adapting to both mobile and desktop screens. The website comes equipped with a shopping cart, a captivating product page, and a seamless checkout widget, all backed by functional state management.',
+      name: 'E-Commerce Website',
+      repoUrl: 'https://github.com/saldanaj97/ecommerce-product-page-main',
+      screenshot: eCommerce,
+      techUsed: ['HTML', 'CSS', 'JavaScript', 'React', 'Next.js'],
+      url: 'https://fe-ecommerce-site.netlify.app/',
+    },
+    {
+      description:
+        "I've created a user-friendly, multi-step rating form using React and Next.js, incorporating sleek designs sourced from FrontendMentor.io. This application boasts a two-step form with built-in error checking and efficient state management.",
       name: 'Multi-Step Rating Form',
       repoUrl: 'https://github.com/saldanaj97/interactive-rating-component-main',
       screenshot: ratingForm,

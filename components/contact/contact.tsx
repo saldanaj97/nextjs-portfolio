@@ -110,7 +110,13 @@ const ContactForms = () => {
         transition={{ delay: 1, duration: 1 }}
         className="flex w-full"
       >
-        <motion.form ref={formRef} onSubmit={handleSubmit(onSubmit)} className="flex w-full flex-col gap-10">
+        <motion.form
+          ref={formRef}
+          onSubmit={handleSubmit(onSubmit)}
+          className="flex w-full flex-col gap-10"
+          data-netlify="true"
+          name="portfolio-contact-form"
+        >
           <motion.div variants={item}>
             <motion.p className="text-sm text-white">Name</motion.p>
             <input placeholder="Name" {...register('name')} className="w-full rounded-md p-2 text-sm" />

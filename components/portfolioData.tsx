@@ -10,7 +10,7 @@ const greeting = {
   resumeLink:
     'https://docs.google.com/document/d/1uziqWB0PZMeOtWaplyu45jTNqNo6uaIc/edit?usp=sharing&ouid=108676278263961432674&rtpof=true&sd=true',
   subTitle: emoji(
-    "A passionate engineer with experience in building web applications with React as well as experience with different frontend UI libraries and backend frameworks. I'm thrilled about the prospect of contributing my skills and passion to your team as a junior software engineer, and I look forward to discussing how we can work together to achieve great things.",
+    "A passionate engineer with experience in building web applications with Javascript/Typescript as well as experience with different frontend UI libraries and backend frameworks. I'm thrilled about the prospect of contributing my skills and passion to your team as a junior software engineer, and I look forward to discussing how we can work together to achieve great things.",
   ),
   title: "Hi, I'm Juan",
   username: 'Juan Saldana',
